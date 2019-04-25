@@ -87,4 +87,46 @@ p.then(function(result){
 	console.log(`[@Client] result = ${result}`);
 })
 
+
+//followup is async
+var p = addAsyncPromise(10,20);
+var p2 = p.then(function(result){
+	console.log(`[@Client] result = ${result}`);
+	var p2 = new Promise(function(resolveFn, rejectFn){
+		setTimeout(function(){
+            var doubleResult = result * 2;
+            resolveFn(doubleResult);
+        }, 5000);
+	});
+	return p2;
+})
+
+//followup is sync - 1
+var p = addAsyncPromise(10,20);
+var p2 = p.then(function(result){
+	console.log(`[@Client] result = ${result}`);
+	var p2 = new Promise(function(resolveFn, rejectFn){
+        var doubleResult = result * 2;
+        resolveFn(doubleResult);
+    });
+	return p2;
+})
+
+//followup is sync - 2
+var p = addAsyncPromise(10,20);
+var p2 = p.then(function(result){
+	console.log(`[@Client] result = ${result}`);
+	var doubleResult = result * 2;
+	var p2 = Promise.resolve(doubleResult);
+	return p2;
+});
+
+//followup is sync - 3
+var p = addAsyncPromise(10,20);
+var p2 = p.then(function(result){
+	console.log(`[@Client] result = ${result}`);
+	var doubleResult = result * 2;
+	return doubleResult;
+});
+
 */
