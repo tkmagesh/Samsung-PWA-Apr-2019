@@ -61,5 +61,30 @@
 	})();
 
 	window['addAsyncEvents'] = addAsyncEvents;
-	
+
+	function addAsyncPromise(x,y){
+		console.log(`	[@Service] processing ${x} and ${y}`);
+		var p = new Promise(function(resolveFn, rejectFn){
+			setTimeout(function(){
+				var result = x + y;
+				console.log(`	[@Service] returning result`);
+				resolveFn(result);
+			}, 5000);
+		});
+		return p;
+	}
+
+	window['addAsyncPromise'] = addAsyncPromise;
+
 })();
+
+/*
+Promise Client
+
+var p = addAsyncPromise(10,20);
+//then, catch
+p.then(function(result){
+	console.log(`[@Client] result = ${result}`);
+})
+
+*/
