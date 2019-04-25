@@ -74,7 +74,27 @@
 		return p;
 	}
 
-	window['addAsyncPromise'] = addAsyncPromise;
+	//window['addAsyncPromise'] = addAsyncPromise;
+
+	async function addAsyncPromiseClient(x,y){
+		/*
+		console.log(`[@Client] triggering addSync`);
+		var result = addAsyncPromise(x,y);
+		console.log(`[@Client] result = ${result}`);
+		*/
+
+		/*console.log(`[@Client] triggering addSync`);
+		var p = addAsyncPromise(x,y);
+		p.then(function(result){
+			console.log(`[@Client] result = ${result}`);	
+		});*/
+
+		console.log(`[@Client] triggering addSync`);
+		var result = await addAsyncPromise(x,y);
+		console.log(`[@Client] result = ${result}`);
+	}
+
+	window['addAsyncPromiseClient'] = addAsyncPromiseClient;
 
 })();
 
