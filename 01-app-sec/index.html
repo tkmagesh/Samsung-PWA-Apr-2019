@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Click Tracker</title>
+	<script>
+		/*(function(){
+			window.addEventListener('DOMContentLoaded', init);
+			function init(){
+				var btnTrack = document.getElementById('btnTrack');
+				btnTrack.addEventListener('click', onBtnTrackClick);
+			}
+			var counter = 0;
+			function onBtnTrackClick(){
+				++counter;
+				document.getElementById('divCounter').innerHTML = counter;
+			}
+		})();*/
+
+		(function(){ var ael='addEventListener',d=window.document,g='getElementById',it='innerHTML',w=window;w[ael]('DOMContentLoaded', i);function i(){var bt = d[g]('btnTrack');bt[ael]('click', obtc);}var c = 0;function obtc(){++c;d[g]('divCounter')[it] = c;}})();
+	</script>
+</head>
+<body>
+	<input type="button" value="Track" id="btnTrack">
+	<div id="divCounter"></div>
+</body>
+</html>

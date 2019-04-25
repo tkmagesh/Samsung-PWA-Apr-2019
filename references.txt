@@ -1,0 +1,19 @@
+localStorage (window.localStorage)
+=============
+1. key value store
+2. key & value must be strings
+3. key has to be unique
+4. ~10MB storage limit
+5. Same Origin Policy
+6. API
+	* setItem(key, value)
+	* getItem(key)
+	* removeItem(key)
+	* clear()
+	* key(index)
+	* length
+
+
+
+
+
