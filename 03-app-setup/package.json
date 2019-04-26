@@ -1,0 +1,20 @@
+{
+  "name": "03-app-setup",
+  "version": "0.1.0",
+  "description": "A sample application setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve" : "http-server ./public"
+  },
+  "keywords": [
+    "demo",
+    "setup",
+    "node"
+  ],
+  "author": "Magesh K",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
