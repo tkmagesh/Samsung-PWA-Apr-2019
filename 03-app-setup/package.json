@@ -1,0 +1,17 @@
+{
+  "name": "03-app-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve" : "http-server ./public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

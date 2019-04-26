@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Worker</title>
+	<script>
+		(function(){
+			window.addEventListener('load', init);
+			
+			var worker = new Worker('./myWorker.js');
+			
+			worker.addEventListener('message', onWorkerMessage);
+
+			
+			function init(){
+				var btnDoWork = document.getElementById('btnDoWork');
+				btnDoWork.addEventListener('click', onBtnDoWorkClick);
+			}
+
+			function onBtnDoWorkClick(){
+				displayMessage('Work Started');
+				worker.postMessage('startWork');
+			}
+
+			function displayMessage(msg){
+				document.getElementById('divMessages').innerHTML += msg + '<br/>';
+			}
+
+			
+		})();
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="">
+	<input type="button" value="Do Work" id="btnDoWork">
+	<div id="divMessages"></div>
+</body>
+</html>
